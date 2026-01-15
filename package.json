@@ -29,7 +29,7 @@
         "url": "https://github.com/devwizardhq/vite-plugin-enumify/issues"
     },
     "scripts": {
-        "prepublish": "npm run build",
+        "prepublishOnly": "npm run build",
         "dev": "unbuild --stub",
         "build": "unbuild",
         "test": "vitest run",
