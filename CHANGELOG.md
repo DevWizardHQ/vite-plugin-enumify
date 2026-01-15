@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### What's Changed
 
-* [chore: bump @devwizard/vite-plugin-enumify package version to 0.1.3.](https://github.com/DevWizardHQ/vite-plugin-enumify/commit/e03378af30bc65384b5353fe3e5ea053c04a990e)
+- [chore: bump @devwizard/vite-plugin-enumify package version to 0.1.3.](https://github.com/DevWizardHQ/vite-plugin-enumify/commit/e03378af30bc65384b5353fe3e5ea053c04a990e)
 
 **Full Changelog**: https://github.com/DevWizardHQ/vite-plugin-enumify/compare/v0.1.2...v0.1.3
 
