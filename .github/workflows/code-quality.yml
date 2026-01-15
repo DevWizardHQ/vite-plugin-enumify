@@ -13,11 +13,11 @@ on:
       - '.github/workflows/code-quality.yml'
       - 'tsconfig.json'
       - 'package.json'
-  pull_request:
-    branches: [main, develop]
+  # pull_request:
+  #   branches: [main, develop]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   quality-check:
@@ -26,32 +26,30 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
-          cache: 'pnpm'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: '10'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
-      - name: Format check
-        run: pnpm exec prettier --check .
+      # Auto-fix formatting on push to main/develop (not on PRs)
+      - name: Format code
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+        run: npx prettier --write .
 
-      - name: Typecheck
-        run: pnpm run typecheck
+      - name: Run ESLint
+        run: npm run lint
 
-      - name: Test
-        run: pnpm run test
-
-      - name: Build
-        run: pnpm run build
+      - name: Commit formatting changes
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: 'style: fix code formatting [skip ci]'

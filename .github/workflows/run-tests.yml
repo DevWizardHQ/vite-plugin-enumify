@@ -10,9 +10,9 @@ on:
       - '**.jsx'
       - '.github/workflows/run-tests.yml'
       - 'package.json'
-      - 'pnpm-lock.yaml'
+      - 'package-lock.json'
       - 'tsconfig.json'
-      - 'build.config.ts'
+      - 'tsup.config.ts'
   pull_request:
     branches: [main, develop]
   workflow_run:
@@ -39,37 +39,29 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: '10'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
-      - name: Type-check, test & build
-        run: |
-          pnpm run typecheck
-          pnpm run test
-          pnpm run build
+      - name: Type-check, lint, test & build
+        run: npm run prepublishOnly
 
       - name: Verify build outputs
         run: |
-          node -e "const fs=require('fs'); console.log('dist/ contents:'); fs.readdirSync('dist').forEach(f => console.log(f)); ['dist/index.mjs','dist/index.cjs','dist/index.d.ts'].forEach(f => {if(!fs.existsSync(f)) throw new Error(f+' not found')}); console.log('All required files exist')"
+          node -e "const fs=require('fs'); console.log('dist/ contents:'); fs.readdirSync('dist').forEach(f => console.log(f)); ['dist/index.js','dist/index.d.ts'].forEach(f => {if(!fs.existsSync(f)) throw new Error(f+' not found')}); console.log('All required files exist')"
 
       - name: Verify package imports
         run: |
           node -e "
             console.log('Testing ESM import...');
-            import('./dist/index.mjs').then(esm => {
+            import('./dist/index.js').then(esm => {
               console.log('ESM exports:', Object.keys(esm));
               console.log('Package imports working correctly!');
             }).catch(err => {
