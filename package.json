@@ -33,6 +33,7 @@
         "dev": "unbuild --stub",
         "build": "unbuild",
         "test": "vitest run",
+        "lint": "tsc --noEmit",
         "typecheck": "tsc --noEmit",
         "format": "prettier --write ."
     },
