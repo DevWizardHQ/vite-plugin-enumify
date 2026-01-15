@@ -1,6 +1,9 @@
 # @devwizard/vite-plugin-enumify
 
-[![NPM](https://img.shields.io/npm/v/@devwizard/vite-plugin-enumify.svg?style=flat-square)](https://www.npmjs.com/package/@devwizard/vite-plugin-enumify)
+[![NPM Version](https://img.shields.io/npm/v/@devwizard/vite-plugin-enumify.svg?style=flat-square)](https://www.npmjs.com/package/@devwizard/vite-plugin-enumify)
+[![NPM Downloads](https://img.shields.io/npm/dt/@devwizard/vite-plugin-enumify.svg?style=flat-square)](https://www.npmjs.com/package/@devwizard/vite-plugin-enumify)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/devwizardhq/laravel-enumify.svg?style=flat-square)](https://packagist.org/packages/devwizardhq/laravel-enumify)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/devwizardhq/laravel-enumify.svg?style=flat-square)](https://packagist.org/packages/devwizardhq/laravel-enumify)
 [![GitHub](https://img.shields.io/badge/repo-devwizardhq%2Flaravel--enumify-181717?style=flat-square&logo=github)](https://github.com/devwizardhq/laravel-enumify)
 
 Vite plugin for [Laravel Enumify](https://github.com/devwizardhq/laravel-enumify) — automatically sync PHP enums to TypeScript during development and builds.
