@@ -1,72 +1,72 @@
 {
-    "name": "@devwizard/vite-plugin-enumify",
-    "version": "0.1.1",
-    "description": "Vite plugin for Laravel Enumify - auto-sync PHP enums to TypeScript",
-    "keywords": [
-        "vite",
-        "vite-plugin",
-        "laravel",
-        "enum",
-        "typescript",
-        "codegen"
-    ],
-    "author": {
-        "name": "IQBAL HASAN",
-        "email": "devwizard24@gmail.com",
-        "url": "https://github.com/DevWizardHQ"
-    },
-    "license": "MIT",
-    "funding": {
-        "type": "github",
-        "url": "https://github.com/sponsors/DevWizardHQ"
-    },
-    "homepage": "https://github.com/DevWizardHQ/vite-plugin-enumify#readme",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/DevWizardHQ/vite-plugin-enumify.git"
-    },
-    "bugs": {
-        "url": "https://github.com/DevWizardHQ/vite-plugin-enumify/issues"
-    },
-    "scripts": {
-        "prepublishOnly": "npm run build",
-        "dev": "unbuild --stub",
-        "build": "unbuild",
-        "test": "vitest run",
-        "lint": "tsc --noEmit",
-        "typecheck": "tsc --noEmit",
-        "format": "prettier --write ."
-    },
-    "main": "dist/index.cjs",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs",
-            "types": "./dist/index.d.ts"
-        }
-    },
-    "files": [
-        "dist",
-        "README.md"
-    ],
-    "peerDependencies": {
-        "vite": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
-    },
-    "devDependencies": {
-        "@types/node": "^25.0.8",
-        "prettier": "^3.5.0",
-        "rollup": "^4.40.0",
-        "typescript": "^5.7.0",
-        "unbuild": "^3.5.0",
-        "vite": "^7.3.1",
-        "vitest": "^4.0.17"
-    },
-    "engines": {
-        "node": ">=18.0.0"
-    },
-    "publishConfig": {
-        "access": "public"
+  "name": "@devwizard/vite-plugin-enumify",
+  "version": "0.1.1",
+  "description": "Vite plugin for Laravel Enumify - auto-sync PHP enums to TypeScript",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "laravel",
+    "enum",
+    "typescript",
+    "codegen"
+  ],
+  "author": {
+    "name": "IQBAL HASAN",
+    "email": "devwizard24@gmail.com",
+    "url": "https://github.com/DevWizardHQ"
+  },
+  "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/DevWizardHQ"
+  },
+  "homepage": "https://github.com/DevWizardHQ/vite-plugin-enumify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevWizardHQ/vite-plugin-enumify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DevWizardHQ/vite-plugin-enumify/issues"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vite": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "prettier": "^3.5.0",
+    "rollup": "^4.40.0",
+    "typescript": "^5.7.0",
+    "unbuild": "^3.5.0",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.17"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
