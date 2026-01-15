@@ -121,24 +121,40 @@ The plugin generates:
 
 ```ts
 // resources/js/enums/order-status.ts
-export enum OrderStatus {
-  Pending = "pending",
-  Processing = "processing",
-  Shipped = "shipped",
-}
+export const OrderStatus = {
+  PENDING: "pending",
+  PROCESSING: "processing",
+  SHIPPED: "shipped",
+} as const;
 
-export type OrderStatusValue = `${OrderStatus}`;
+export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus];
 
-export const OrderStatusLabels: Record<OrderStatus, string> = {
-  [OrderStatus.Pending]: "Pending",
-  [OrderStatus.Processing]: "Processing",
-  [OrderStatus.Shipped]: "Shipped",
-};
+export const OrderStatusUtils = {
+  label(status: OrderStatus): string {
+    switch (status) {
+      case OrderStatus.PENDING:
+        return "Pending";
+      case OrderStatus.PROCESSING:
+        return "Processing";
+      case OrderStatus.SHIPPED:
+        return "Shipped";
+    }
+  },
 
-export const OrderStatusColors: Record<OrderStatus, string> = {
-  [OrderStatus.Pending]: "yellow",
-  [OrderStatus.Processing]: "blue",
-  [OrderStatus.Shipped]: "green",
+  color(status: OrderStatus): string {
+    switch (status) {
+      case OrderStatus.PENDING:
+        return "yellow";
+      case OrderStatus.PROCESSING:
+        return "blue";
+      case OrderStatus.SHIPPED:
+        return "green";
+    }
+  },
+
+  options(): OrderStatus[] {
+    return Object.values(OrderStatus);
+  },
 };
 ```
 
