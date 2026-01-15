@@ -1,11 +1,11 @@
-import { defineBuildConfig } from 'unbuild';
+import { defineBuildConfig } from "unbuild";
 
 export default defineBuildConfig({
-    clean: true,
-    declaration: true,
-    externals: ['rollup', 'vite'],
-    failOnWarn: false,
-    rollup: {
-        emitCJS: true,
-    },
+  clean: true,
+  declaration: true,
+  externals: ["rollup", "vite"],
+  failOnWarn: false,
+  rollup: {
+    emitCJS: true,
+  },
 });

@@ -38,18 +38,18 @@ This plugin is package-manager agnostic and works with npm, pnpm, or yarn. The r
 Add the plugin to your `vite.config.ts`:
 
 ```ts
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import enumify from '@devwizard/vite-plugin-enumify';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import enumify from "@devwizard/vite-plugin-enumify";
 
 export default defineConfig({
-    plugins: [
-        enumify(),
-        laravel({
-            input: ['resources/js/app.ts'],
-            refresh: true,
-        }),
-    ],
+  plugins: [
+    enumify(),
+    laravel({
+      input: ["resources/js/app.ts"],
+      refresh: true,
+    }),
+  ],
 });
 ```
 
@@ -63,23 +63,23 @@ export default defineConfig({
 
 ```ts
 enumify({
-    // PHP binary path (default: "php")
-    artisanBin: 'php',
+  // PHP binary path (default: "php")
+  artisanBin: "php",
 
-    // Path to the artisan file (default: "artisan")
-    artisanFile: 'artisan',
+  // Path to the artisan file (default: "artisan")
+  artisanFile: "artisan",
 
-    // Command to run (default: "enumify:sync")
-    syncCommand: 'enumify:sync',
+  // Command to run (default: "enumify:sync")
+  syncCommand: "enumify:sync",
 
-    // Working directory (default: process.cwd())
-    cwd: process.cwd(),
+  // Working directory (default: process.cwd())
+  cwd: process.cwd(),
 
-    // Enable watch mode in development (default: runtime.watch from config/enumify.php)
-    watch: true,
+  // Enable watch mode in development (default: runtime.watch from config/enumify.php)
+  watch: true,
 
-    // Additional environment variables
-    env: {},
+  // Additional environment variables
+  env: {},
 });
 ```
 
@@ -122,23 +122,23 @@ The plugin generates:
 ```ts
 // resources/js/enums/order-status.ts
 export enum OrderStatus {
-    Pending = 'pending',
-    Processing = 'processing',
-    Shipped = 'shipped',
+  Pending = "pending",
+  Processing = "processing",
+  Shipped = "shipped",
 }
 
 export type OrderStatusValue = `${OrderStatus}`;
 
 export const OrderStatusLabels: Record<OrderStatus, string> = {
-    [OrderStatus.Pending]: 'Pending',
-    [OrderStatus.Processing]: 'Processing',
-    [OrderStatus.Shipped]: 'Shipped',
+  [OrderStatus.Pending]: "Pending",
+  [OrderStatus.Processing]: "Processing",
+  [OrderStatus.Shipped]: "Shipped",
 };
 
 export const OrderStatusColors: Record<OrderStatus, string> = {
-    [OrderStatus.Pending]: 'yellow',
-    [OrderStatus.Processing]: 'blue',
-    [OrderStatus.Shipped]: 'green',
+  [OrderStatus.Pending]: "yellow",
+  [OrderStatus.Processing]: "blue",
+  [OrderStatus.Shipped]: "green",
 };
 ```
 
