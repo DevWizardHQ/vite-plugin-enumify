@@ -1,8 +1,8 @@
+import { spawn } from 'child_process';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { spawn } from 'child_process';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { enumify } from '../src/vite-plugin-enumify';
 
 vi.mock('child_process', () => ({

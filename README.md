@@ -5,7 +5,6 @@
 
 Vite plugin for [Laravel Enumify](https://github.com/devwizardhq/laravel-enumify) — automatically sync PHP enums to TypeScript during development and builds.
 
-
 ## Features
 
 - Runs `php artisan enumify:sync --force --quiet` before Vite compiles
@@ -145,10 +144,10 @@ export const OrderStatusColors: Record<OrderStatus, string> = {
 
 ## Git Workflow
 
-1) Create a feature branch from `main`
-2) Make changes with focused commits
-3) Run `pnpm run build` and `pnpm run typecheck`
-4) Open a PR and ensure CI passes
+1. Create a feature branch from `main`
+2. Make changes with focused commits
+3. Run `npm run build` and `npm run typecheck`
+4. Open a PR and ensure CI passes
 
 Release tip: tag releases after merging to `main`, then publish to NPM.
 
