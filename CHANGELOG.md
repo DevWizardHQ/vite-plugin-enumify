@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### What's Changed
 
-* [No changes were detected in the package.json file.](https://github.com/DevWizardHQ/vite-plugin-enumify/commit/559a9b6c0de4f921d8101392660e1d04c4d2f051)
-* [style: fix code formatting [skip ci]](https://github.com/DevWizardHQ/vite-plugin-enumify/commit/05d16db9b65a8c30a8b66daeec6bfd67598e7859)
+- [No changes were detected in the package.json file.](https://github.com/DevWizardHQ/vite-plugin-enumify/commit/559a9b6c0de4f921d8101392660e1d04c4d2f051)
+- [style: fix code formatting [skip ci]](https://github.com/DevWizardHQ/vite-plugin-enumify/commit/05d16db9b65a8c30a8b66daeec6bfd67598e7859)
   **Full Changelog**: https://github.com/DevWizardHQ/vite-plugin-enumify/compare/v0.1.1...v0.1.2
 
 ## v0.1.1 - 2026-01-15
