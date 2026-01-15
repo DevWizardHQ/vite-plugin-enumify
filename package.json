@@ -1,6 +1,6 @@
 {
     "name": "@devwizard/vite-plugin-enumify",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Vite plugin for Laravel Enumify - auto-sync PHP enums to TypeScript",
     "keywords": [
         "vite",
@@ -65,5 +65,8 @@
     },
     "engines": {
         "node": ">=18.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
