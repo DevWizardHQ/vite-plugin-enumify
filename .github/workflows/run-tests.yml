@@ -55,13 +55,13 @@ jobs:
 
       - name: Verify build outputs
         run: |
-          node -e "const fs=require('fs'); console.log('dist/ contents:'); fs.readdirSync('dist').forEach(f => console.log(f)); ['dist/index.js','dist/index.d.ts'].forEach(f => {if(!fs.existsSync(f)) throw new Error(f+' not found')}); console.log('All required files exist')"
+          node -e "const fs=require('fs'); console.log('dist/ contents:'); fs.readdirSync('dist').forEach(f => console.log(f)); ['dist/index.cjs','dist/index.mjs','dist/index.d.ts'].forEach(f => {if(!fs.existsSync(f)) throw new Error(f+' not found')}); console.log('All required files exist')"
 
       - name: Verify package imports
         run: |
           node -e "
             console.log('Testing ESM import...');
-            import('./dist/index.js').then(esm => {
+            import('./dist/index.mjs').then(esm => {
               console.log('ESM exports:', Object.keys(esm));
               console.log('Package imports working correctly!');
             }).catch(err => {
