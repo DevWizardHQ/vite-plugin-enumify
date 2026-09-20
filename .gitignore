@@ -19,4 +19,8 @@ pnpm-debug.log*
 
 # Test coverage
 coverage/
-config.bat
+
+# Local env
+.env
+.env.*
+!.env.example
