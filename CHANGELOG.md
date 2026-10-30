@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.0.1 - 2026-10-30
+
+Maintenance release. No changes to the published code.
+
+### Dependencies
+
+- Dev dependencies updated: vite 8.3.1, vitest 5.0.2, rollup 4.63.5, prettier 3.9.9, @types/node 26.6.3.
+
+### Maintenance
+
+- CI tests on Node 22, 24 and 26. Node 20 reached end of life in April 2026.
+- Removed the supply-chain scan workflow and the repository git hooks. Force pushes are blocked by a branch ruleset and secret scanning with push protection is on.
+
+**Full Changelog**: https://github.com/DevWizardHQ/vite-plugin-enumify/compare/v1.0.0...v1.0.1
+
 ## v1.0.0 - 2026-04-12
 
 ### What's Changed
