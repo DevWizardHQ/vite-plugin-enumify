@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.2",
+    "lefthook": "2.2.2",
     "prettier": "^3.9.8",
     "rollup": "^4.63.4",
     "typescript": "^6.0.3",
@@ -68,5 +69,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "allowScripts": {
+    "lefthook": true
   }
 }
